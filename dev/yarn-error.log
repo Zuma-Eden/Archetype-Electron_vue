@@ -1,0 +1,104 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Darzuma\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js electron:serve
+
+PATH: 
+  C:\Program Files\Java\jdk1.8.0_291\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\ISD\jdk-16.0.1\bin;C:\ISD\apache-maven-3.8.1\bin;C:\Users\Darzuma\AppData\Local\Microsoft\WindowsApps;C:\Users\Darzuma\AppData\Roaming\npm;C:\Users\Darzuma\AppData\Local\GitHubDesktop\bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: D:\Desktop\Git\祖玛乐园 Zuma-Eden\Archetype-Electron_vue\dev\package.json: Unexpected token } in JSON at position 1682
+      at JSON.parse (<anonymous>)
+      at C:\Users\Darzuma\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\Darzuma\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\Darzuma\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "dev",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "serve": "vue-cli-service serve",
+      "build": "vue-cli-service build",
+      "electron:build": "vue-cli-service electron:build",
+      "electron:serve": "vue-cli-service electron:serve",
+      "postinstall": "electron-builder install-app-deps",
+      "postuninstall": "electron-builder install-app-deps"
+    },
+    "main": "background.js",
+    "dependencies": {
+      "vue": "^2.6.11",
+      "vue-router": "^3.2.0",
+      "vuex": "^3.4.0"
+    },
+    "devDependencies": {
+      "@vue/cli-plugin-router": "~4.5.0",
+      "@vue/cli-plugin-vuex": "~4.5.0",
+      "@vue/cli-service": "~4.5.0",
+      "electron": "^13.0.0",
+      "electron-devtools-installer": "^3.1.0",
+      "node-sass": "^4.12.0",
+      "sass-loader": "^8.0.2",
+      "vue-cli-plugin-electron-builder": "~2.1.1",
+      "vue-template-compiler": "^2.6.11"
+    },
+    "browserslist": [
+      "> 1%",
+      "last 2 versions",
+      "not dead"
+    ],
+    "__npminstall_done": false,
+    "build": {
+      "productName": "electron-vue-admin",
+      "appId": "org.simulatedgreg.electron-vue",
+      "directories": {
+        "output": "build"
+      },
+      "files": [
+        "dist/electron/**/*"
+      ],
+      "electronDownload":{
+        "mirror":"https://npm.taobao.org/mirrors/electron/"
+      },
+      "dmg": {
+        "contents": [
+          {
+            "x": 410,
+            "y": 150,
+            "type": "link",
+            "path": "/Applications"
+          },
+          {
+            "x": 130,
+            "y": 150,
+            "type": "file"
+          }
+        ]
+      },
+      "mac": {
+        "icon": "build/icons/icon.icns"
+      },
+      "win": {
+        "icon": "build/icons/icon.ico"
+      },
+      "linux": {
+        "icon": "build/icons"
+      }
+    },
+  
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
