@@ -14,14 +14,19 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1500,
+    height: 900,
     webPreferences: {
       
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
+
+
+      //是否准许渲染进程中直接调用 Node API，该选项在 vue.config.js 中 electronBuilder 配置
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
-      contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION
+      contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION,
+      // 关闭跨域检查
+      webSecurity:false
     }
   })
 
@@ -36,20 +41,6 @@ async function createWindow() {
   }
 }
 
-// Quit when all windows are closed.
-app.on('window-all-closed', () => {
-  // On macOS it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
-
-app.on('activate', () => {
-  // On macOS it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (BrowserWindow.getAllWindows().length === 0) createWindow()
-})
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -80,3 +71,18 @@ if (isDevelopment) {
     })
   }
 }
+
+app.on('activate', () => {
+  // On macOS it's common to re-create a window in the app when the
+  // dock icon is clicked and there are no other windows open.
+  if (BrowserWindow.getAllWindows().length === 0) createWindow()
+})
+
+// Quit when all windows are closed.
+app.on('window-all-closed', () => {
+  // On macOS it is common for applications and their menu bar
+  // to stay active until the user quits explicitly with Cmd + Q
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
